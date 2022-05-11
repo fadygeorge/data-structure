@@ -39,7 +39,12 @@ class Queue
 
   def dequeue
     if is_empty
-      puts "The Queue is Empty.."
+      #puts "The Queue is Empty.."
+      return
+    elsif @front == 0 and @rear == 0
+      d = @arr[@front]
+      @rear = @front -=1
+      return d
     else
       d = @arr[@front]
       @arr.shift
